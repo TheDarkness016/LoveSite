@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IloveYou</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="components/heart.png" type="image/png">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dziękuje skarbie</h1>
+        <p>Za te 5 miesięcy</p>
+        <div class="heart-shape">
+            <img id="main-image" src="components/love_2.jpeg" alt="Romantic Image">
+        </div>
+        <p class="question">Czy Cię kocham?</p>
+        <div class="buttons">
+            <button id="yes-button" onclick="showLove()">Tak</button>
+            <button id="no-button" onclick="shrinkNoButton()">Nie</button>
+        </div>
+        <div id="love-message" class="hidden">
+            <div class="arrow-buttons">
+                <button id="left-arrow" onclick="prevReason()">&#9664;</button>
+                <p id="reason"></p>
+                <button id="right-arrow" onclick="nextReason()">&#9654;</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
