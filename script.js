@@ -106,64 +106,78 @@ const reasons = [
 let currentReasonIndex = 0;
 
 function showLove() {
-	document.querySelector('.buttons').classList.add('hidden');
-	document.getElementById('love-message').classList.remove('hidden');
-	document.getElementById('reason').innerHTML = reasons[currentReasonIndex];
-	document.getElementById('reason').classList.add('fade-in', 'first');
-	document.getElementById('reason-container').style.height = 'auto'; // Make sure to set the initial height
+    document.querySelector('.buttons').classList.add('hidden');
+    document.getElementById('love-message').classList.remove('hidden');
+    document.getElementById('reason').innerHTML = reasons[currentReasonIndex];
+    document.getElementById('reason').classList.add('fade-in', 'first');
+    document.getElementById('reason-container').style.height = 'auto';
 }
 
 function shrinkNoButton() {
-	const noButton = document.getElementById('no-button');
-	const yesButton = document.getElementById('yes-button');
-	noClickCount++;
+    const noButton = document.getElementById('no-button');
+    const yesButton = document.getElementById('yes-button');
+    noClickCount++;
 
-	if (noClickCount >= 10) {
-		noButton.style.display = 'none';
-		yesButton.style.transform = 'scale(1.2)';
-	} else {
-		const noButtonScale = 1 - 0.1 * noClickCount;
-		const yesButtonScale = 1 + 0.1 * noClickCount;
-		noButton.style.transform = `scale(${noButtonScale})`;
-		yesButton.style.transform = `scale(${yesButtonScale})`;
-	}
+    if (noClickCount >= 10) {
+        noButton.style.display = 'none';
+        yesButton.style.transform = 'scale(1.2)';
+    } else {
+        const noButtonScale = 1 - 0.1 * noClickCount;
+        const yesButtonScale = 1 + 0.1 * noClickCount;
+        noButton.style.transform = `scale(${noButtonScale})`;
+        yesButton.style.transform = `scale(${yesButtonScale})`;
+    }
 }
 
 function prevReason() {
-	const reasonElement = document.getElementById('reason');
-	reasonElement.classList.remove('fade-in');
-	reasonElement.classList.add('fade-out-left');
+    const reasonElement = document.getElementById('reason');
+    reasonElement.classList.remove('fade-in');
+    reasonElement.classList.add('fade-out-left');
 
-	setTimeout(() => {
-		currentReasonIndex =
-			currentReasonIndex === 0 ? reasons.length - 1 : currentReasonIndex - 1;
-		reasonElement.innerHTML = reasons[currentReasonIndex];
-		reasonElement.classList.remove('fade-out-left', 'first');
-		reasonElement.classList.add('fade-in');
-		updateContainerHeight();
-	}, 500); // Adjust to match CSS animation duration
+    setTimeout(() => {
+        currentReasonIndex =
+            currentReasonIndex === 0 ? reasons.length - 1 : currentReasonIndex - 1;
+        reasonElement.innerHTML = reasons[currentReasonIndex];
+        reasonElement.classList.remove('fade-out-left', 'first');
+        reasonElement.classList.add('fade-in');
+        updateContainerHeight();
+    }, 500);
 }
 
 function nextReason() {
-	const reasonElement = document.getElementById('reason');
-	reasonElement.classList.remove('fade-in');
-	reasonElement.classList.add('fade-out-right');
+    const reasonElement = document.getElementById('reason');
+    reasonElement.classList.remove('fade-in');
+    reasonElement.classList.add('fade-out-right');
 
-	setTimeout(() => {
-		currentReasonIndex =
-			currentReasonIndex === reasons.length - 1 ? 0 : currentReasonIndex + 1;
-		reasonElement.innerHTML = reasons[currentReasonIndex];
-		reasonElement.classList.remove('fade-out-right', 'first');
-		reasonElement.classList.add('fade-in');
-		updateContainerHeight();
-	}, 500);
+    setTimeout(() => {
+        currentReasonIndex =
+            currentReasonIndex === reasons.length - 1 ? 0 : currentReasonIndex + 1;
+        reasonElement.innerHTML = reasons[currentReasonIndex];
+        reasonElement.classList.remove('fade-out-right', 'first');
+        reasonElement.classList.add('fade-in');
+        updateContainerHeight();
+    }, 500);
 }
 
 function updateContainerHeight() {
-	const reasonContainer = document.getElementById('reason-container');
-	if (currentReasonIndex === 0) {
-		reasonContainer.style.height = 'auto';
-	} else {
-		reasonContainer.style.height = '100px';
-	}
+    const reasonContainer = document.getElementById('reason-container');
+    if (currentReasonIndex === 0) {
+        reasonContainer.style.height = 'auto';
+    } else {
+        reasonContainer.style.height = '100px';
+    }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const petalContainer = document.getElementById('petal-container');
+    const numPetals = 30;
+
+    for (let i = 0; i < numPetals; i++) {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        petal.style.left = `${Math.random() * 100}vw`;
+        petal.style.animationDelay = `${Math.random() * 10}s`;
+        petal.style.transform = `scale(${Math.random() + 0.5})`;
+        petalContainer.appendChild(petal);
+    }
+});
