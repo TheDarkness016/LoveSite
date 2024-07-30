@@ -157,7 +157,7 @@ button {
     top: -10vh;
     width: 25px;
     height: 25px;
-    background-image: url('components/heart.png');
+    background-image: url('heart.png');
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0;
