@@ -1,146 +1,169 @@
 body {
-	font-family: 'Arial', sans-serif;
-	background: linear-gradient(to right, #ffafbd, #ffc3a0);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
-	color: #333;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
 }
 
 .container {
-	text-align: center;
-	background: rgba(255, 255, 255, 0.8);
-	padding: 20px;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	transition: all 0.3s ease-in-out;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
 h1 {
-	font-size: 2em;
-	color: #d6336c;
+    font-size: 2em;
+    color: #d6336c;
 }
 
 p {
-	font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 .heart-shape {
-	width: 150px;
-	height: 150px;
-	margin: 20px auto;
-	position: relative;
-	overflow: hidden;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .heart-shape img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	mask: radial-gradient(at 70% 31%, #000 29%, #0000 30%),
-		radial-gradient(at 30% 31%, #000 29%, #0000 30%),
-		linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
-	clip-path: polygon(-41% 0, 50% 91%, 141% 0);
-	position: absolute;
-	top: 0;
-	left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mask: radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+        radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+        linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .question {
-	font-size: 1.5em;
-	margin: 20px 0;
+    font-size: 1.5em;
+    margin: 20px 0;
 }
 
 .buttons {
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
 }
 
 button {
-	padding: 10px 20px;
-	font-size: 1em;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
 #yes-button {
-	background-color: #d6336c;
-	color: white;
+    background-color: #d6336c;
+    color: white;
 }
 
 #no-button {
-	background-color: #cccccc;
-	color: black;
+    background-color: #cccccc;
+    color: black;
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 .show {
-	display: block;
-	font-size: 1.5em;
-	color: #d6336c;
+    display: block;
+    font-size: 1.5em;
+    color: #d6336c;
 }
 
 .arrow-buttons {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	justify-content: center;
-	margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 #reason-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	max-width: 300px;
-	min-height: 100px;
-	height: auto;
-	transition: height 0.5s ease-in-out;
-	overflow: hidden;
-	position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    min-height: 100px;
+    height: auto;
+    transition: height 0.5s ease-in-out;
+    overflow: hidden;
+    position: relative;
 }
 
 .reason {
-	font-size: 1.2em;
-	opacity: 0;
-	position: absolute;
-	transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    font-size: 1.2em;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .reason.first {
-	opacity: 1;
-	transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .fade-in {
-	opacity: 1;
-	transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .fade-out-left {
-	opacity: 0;
-	transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-100%);
 }
 
 .fade-out-right {
-	opacity: 0;
-	transform: translateX(100%);
+    opacity: 0;
+    transform: translateX(100%);
 }
 
 .reason.static {
-	max-height: 100px;
-	overflow: hidden;
+    max-height: 100px;
+    overflow: hidden;
 }
 
-link[rel='icon'] {
-	background-color: transparent;
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.petal {
+    position: fixed;
+    top: -10vh;
+    width: 25px;
+    height: 25px;
+    background-image: url('components/heart.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fall 10s linear infinite;
+}
+
+.link[rel='icon'] {
+    background-color: transparent;
 }
